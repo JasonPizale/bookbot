@@ -12,5 +12,12 @@ def character_counts(book_text):
         else:
             char_dict[character] = 1
     return char_dict
-        
 
+def sorted_character_counts(char_count):
+    entries = []
+    for char, count in char_count.items():
+        if char.isalpha():
+            entry = {"char": char, "num": count}
+            entries.append(entry)
+    entries.sort(key=lambda d: d["num"], reverse=True)
+    return entries
